@@ -10,7 +10,6 @@ module.exports = {
   moduleNameMapper: {
     'app/(.*)': '<rootDir>/<rootDir>src/app/$1',
   },
-  collectCoverage: true,
   coverageDirectory: 'coverage',
   collectCoverageFrom: [
     'src/app/**/*.ts',
