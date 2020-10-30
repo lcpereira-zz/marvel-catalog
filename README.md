@@ -1,7 +1,7 @@
 # Marvel Catalog
 
 [![Build Status](https://travis-ci.org/lcpereira/marvel-catalog.svg?branch=main)](https://travis-ci.org/lcpereira/marvel-catalog)
-[![codecov](https://codecov.io/gh/lcpereira/marvel-catalog/branch/main/graph/badge.svg?token=4JRKACSYNI)](undefined)
+[![codecov](https://codecov.io/gh/lcpereira/marvel-catalog/branch/main/graph/badge.svg?token=4JRKACSYNI)](https://codecov.io/gh/lcpereira/marvel-catalog)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
