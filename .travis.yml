@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - "12"
+sudo: required
+branches:
+  only:
+  - main
+before_script:
+  - npm install -g @angular/cli
+install:
+  - npm install
+script:
+  - npm run lint
+  - npm run test:coverage
+  - ng build --prod --base-href https://lcpereira.github.io/marvel-catalog/
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/marvel-catalog
+  on:
+    branch: main
