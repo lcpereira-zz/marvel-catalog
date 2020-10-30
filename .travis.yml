@@ -1,19 +1,23 @@
+dist: xenial
+sudo: false
+
 language: node_js
 node_js:
   - "12"
-dist: xenial
-sudo: required
-branches:
-  only:
-  - main
-before_script:
-  - npm install -g @angular/cli
+
+cache:
+  directories:
+     - ./node_modules
+
 install:
+  - npm install -g @angular/cli
   - npm install
+
 script:
   - npm run lint
   - npm run test:coverage
   - ng build --prod --base-href https://lcpereira.github.io/marvel-catalog/
+
 deploy:
   provider: pages
   skip_cleanup: true
