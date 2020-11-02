@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderModule } from './components/header/header.module';
+import { HeaderModule } from './shared/components/header/header.module';
 import { AuthInterceptor } from './guards/auth.interceptor';
 
 @NgModule({

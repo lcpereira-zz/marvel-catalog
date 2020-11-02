@@ -9,3 +9,4 @@
 ### Changed
 
 * **marvel-project:** new structure for the project
+* **marvel-project:** structured pages and services for an initial delivery
