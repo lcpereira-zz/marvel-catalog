@@ -1,0 +1,13 @@
+<div
+  infinite-scroll
+  [infiniteScrollDistance]="scrollDistance"
+  [infiniteScrollUpDistance]="scrollUpDistance"
+  [infiniteScrollThrottle]="throttle"
+  (scrolled)="loadMoreComics(true)"
+>
+  <p *ngFor="let comic of comics">
+    {{ comic.title }}
+  </p>
+</div>
+
+<div [hidden]="!isLoading">CARREGANDO...</div>

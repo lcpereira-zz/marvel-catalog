@@ -1,0 +1,13 @@
+<div
+  infinite-scroll
+  [infiniteScrollDistance]="scrollDistance"
+  [infiniteScrollUpDistance]="scrollUpDistance"
+  [infiniteScrollThrottle]="throttle"
+  (scrolled)="loadMoreCharacters(true)"
+>
+  <p *ngFor="let character of characters">
+    {{ character.name }}
+  </p>
+</div>
+
+<div [hidden]="!isLoading">CARREGANDO...</div>

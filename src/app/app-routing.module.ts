@@ -8,6 +8,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'comics',
+    loadChildren: () => import('./pages/comics/comics.module').then((m) => m.ComicsModule),
+  },
+  {
+    path: 'characters',
+    loadChildren: () =>
+      import('./pages/characters/characters.module').then((m) => m.CharactersModule),
+  },
+  {
     path: '**',
     loadChildren: () => import('./pages/not-found/not-found.module').then((m) => m.NotFoundModule),
   },
