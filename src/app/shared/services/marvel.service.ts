@@ -1,3 +1,6 @@
+import { Comic } from './../interfaces/comic';
+import { Character } from './../interfaces/character';
+import { Response } from './../interfaces/response';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
@@ -11,7 +14,7 @@ export class MarvelService {
 
   constructor(private http: HttpClient) {}
 
-  loadComics(limit: number, offset: number, searchText?: string): Observable<any> {
+  loadComics(limit: number, offset: number, searchText?: string): Observable<Response<Comic>> {
     let params = `limit=${limit}&offset=${offset}`;
 
     if (searchText) {
@@ -25,7 +28,7 @@ export class MarvelService {
     );
   }
 
-  getComic(comicId): Observable<any> {
+  getComic(comicId): Observable<Comic> {
     return this.http.get(`${this.api}/comics/${comicId}`).pipe(
       map((result: any) => {
         return result.data.results[0];
@@ -33,7 +36,11 @@ export class MarvelService {
     );
   }
 
-  loadCharacters(limit: number, offset: number, searchText?: string): Observable<any> {
+  loadCharacters(
+    limit: number,
+    offset: number,
+    searchText?: string
+  ): Observable<Response<Character>> {
     let params = `limit=${limit}&offset=${offset}`;
 
     if (searchText) {
@@ -47,7 +54,7 @@ export class MarvelService {
     );
   }
 
-  getCharacter(characterId): Observable<any> {
+  getCharacter(characterId): Observable<Character> {
     return this.http.get(`${this.api}/characters/${characterId}`).pipe(
       map((result: any) => {
         return result.data.results[0];

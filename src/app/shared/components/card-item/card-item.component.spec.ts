@@ -25,9 +25,9 @@ describe('CardItemComponent', () => {
       thumbnail: {
         path: 'test',
         extension: 'jpg',
-        title: 'Test title',
-        description: 'Test description',
       },
+      title: 'Test title',
+      description: 'Test description',
     };
 
     fixture.detectChanges();

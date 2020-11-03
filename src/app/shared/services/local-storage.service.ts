@@ -14,7 +14,7 @@ export class LocalStorageService {
     localStorage.setItem(key, JSON.stringify(data));
   }
 
-  getItemAdJSON<T>(key: string): T {
+  getItemAsJSON<T>(key: string): T {
     return JSON.parse(localStorage.getItem(key));
   }
 }

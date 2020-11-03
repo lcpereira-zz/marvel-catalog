@@ -1,3 +1,4 @@
+import { Character } from './../../shared/interfaces/character';
 import { MarvelService } from '../../shared/services/marvel.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
@@ -9,7 +10,7 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./characters.component.scss'],
 })
 export class CharactersComponent implements OnInit {
-  characters: any = [];
+  characters: Character[] = [];
   limit = 20;
   offset = 0;
   total = 0;
@@ -31,11 +32,11 @@ export class CharactersComponent implements OnInit {
       this.limit = 20;
       this.offset = 0;
       this.searchText = searchText;
-      this.loadMoreCharacters(false, searchText);
+      this.loadMoreCharacters(false);
     });
   }
 
-  loadMoreCharacters(isNewPage?: boolean, searchText?: string): void {
+  loadMoreCharacters(isNewPage?: boolean): void {
     if (isNewPage) {
       if (this.characters.length === this.total) {
         return;

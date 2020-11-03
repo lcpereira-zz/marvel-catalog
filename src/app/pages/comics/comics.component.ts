@@ -1,3 +1,4 @@
+import { Comic } from './../../shared/interfaces/comic';
 import { MarvelService } from './../../shared/services/marvel.service';
 import { Component, OnInit } from '@angular/core';
 import { Subject, Subscription } from 'rxjs';
@@ -9,7 +10,7 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./comics.component.scss'],
 })
 export class ComicsComponent implements OnInit {
-  comics: any = [];
+  comics: Comic[] = [];
   limit = 20;
   offset = 0;
   total = 0;

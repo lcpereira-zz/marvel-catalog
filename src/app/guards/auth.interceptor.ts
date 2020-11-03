@@ -10,8 +10,8 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const ts = new Date().getTime();
-    const publicKey = this.localStorageService.getItem('publicKey') as string;
-    const privateKey = this.localStorageService.getItem('privateKey') as string;
+    const publicKey = this.localStorageService.getItem('publicKey');
+    const privateKey = this.localStorageService.getItem('privateKey');
     const hash = Md5.hashStr(ts + privateKey + publicKey);
 
     request = request.clone({
