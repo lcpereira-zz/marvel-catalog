@@ -16,7 +16,7 @@ install:
 script:
   - npm run lint
   - npm run test:coverage
-  - ng build --prod --base-href https://lcpereira.github.io/marvel-catalog/ --deploy-url=https://lcpereira.github.io/marvel-catalog/
+  - ng build --prod --base-href https://lcpereira.github.io/marvel-catalog/ --deploy-url https://lcpereira.github.io/marvel-catalog/
   - mv dist/marvel-catalog/index.html dist/marvel-catalog/404.html
 
 after_success:
